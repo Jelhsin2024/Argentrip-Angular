@@ -6,8 +6,7 @@ import { VuelosComponent } from './vuelos/vuelos.component';
 
 @NgModule({
   declarations:[
-    VuelosComponent,
-    PaquetesComponent
+
   ],
   imports: [
     CommonModule,
