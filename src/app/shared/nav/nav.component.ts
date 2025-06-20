@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss'],
+  standalone: false
 })
 export class NavComponent  implements OnInit {
 
