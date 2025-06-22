@@ -24,9 +24,15 @@ export const routes: Routes = [
     loadChildren: () => import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
   },
           {
+    path: 'pirulo',
+    loadChildren: () => import('./pirulo/pirulo.module').then((m) => m.PiruloModule),
+  },
+          {
     path: 'not-found',
     loadComponent: () => import('./shared/pages/not-found/not-found.component').then((m) => m.NotFoundComponent),
   },
+
+
   {
     path: '',
     redirectTo: 'home',
