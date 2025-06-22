@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from './footer/footer.component';
 import { NavComponent } from './nav/nav.component';
 import { NotificationsModule } from '../notifications/notifications.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -13,7 +14,8 @@ import { NotificationsModule } from '../notifications/notifications.module';
   ],
   imports: [
     CommonModule,
-    NotificationsModule
+    NotificationsModule,
+    RouterModule
   ],
   exports:[
     FooterComponent,

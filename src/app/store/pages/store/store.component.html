@@ -1,9 +1,17 @@
 <ion-content>
   <app-nav></app-nav>
-  <h1>Store</h1>
-  <app-product-detail></app-product-detail>
-  <p>
-    store works!
-  </p>
+  <app-nav-store></app-nav-store>
+  <div class="producto">
+  <div>
+    <h3>ITEM</h3>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita aut, numquam nulla quaerat possimus quod culpa voluptatibus, 
+    </p>
+  </div>
+  <div>
+  <button type="button" class="btn btn-outline-primary producto-butoom" [routerLink]="['/store/item']" routerLinkActive="router-link-active" > Vover detalles</button>
+  </div>
+</div>
+  <!-- <app-product-detail></app-product-detail> -->
+
   <app-footer></app-footer>
 </ion-content>
