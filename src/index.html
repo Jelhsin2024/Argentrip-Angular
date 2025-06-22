@@ -1,25 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="utf-8" />
-  <title>Ionic App</title>
+  <title>Argentrip</title>
 
   <base href="/" />
 
-  <meta name="color-scheme" content="light dark" />
+  <!-- <meta name="color-scheme" content="light dark" /> -->
   <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="format-detection" content="telephone=no" />
   <meta name="msapplication-tap-highlight" content="no" />
 
-  <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
+  <link rel="icon" href="assets/images/LogoArgentrip_transparent.png">
 
   <!-- add to homescreen for ios -->
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+  <!-- GLOBALLES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="assets/css/whatsapp.css">
+  <script src="https://kit.fontawesome.com/35c02bc82e.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/45805190a7.js" crossorigin="anonymous"></script>
+
+  <!-- Scripts -->
+  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/galery.js?28112022" defer></script>
+  <!-- Alertify -->
+  <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js" defer></script>
+  <!-- Fonts -->
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+  <!-- Styles -->
+  <link href="assets/css/app.css?1611233022" rel="stylesheet">
+  <!-- Miniatura de pestaña de pagina -->
+
 </head>
 
 <body>
+  <!-- Botones flotantes de whatsapp y telefono -->
+  <div id="whatsapp">
+    <!-- se inserta el whatsapp aqui de desde el administrador -->
+                         <a href="https://api.whatsapp.com/send?phone=+549${contacto.whatsapp}&text=🔥¡Vi%20la%20carta%20digital!🔥%20%20Quiero%20hacerte%20un%20pedido🍗🗒%20%20%20📌"
+                    class="float" target="_blank">
+                        <i class="fa fa-whatsapp my-float"></i>
+                    </a>
+  </div>
+  <!-- Boton flotante llamada-->
+  <div id="telefono">
+    <!-- se inserta el whatsapp aqui de desde el administrador -->
+                         <a href="tel:+549${contacto.celular}" class="float-tel" target="_blank">
+                        <i class="fa fa-solid fa-phone"></i>
+                    </a>
+  </div>
   <app-root></app-root>
 </body>
 

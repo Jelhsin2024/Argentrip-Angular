@@ -23,9 +23,18 @@ export const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
   },
+          {
+    path: 'not-found',
+    loadComponent: () => import('./shared/pages/not-found/not-found.component').then((m) => m.NotFoundComponent),
+  },
   {
     path: '',
     redirectTo: 'home',
+    pathMatch: 'full',
+  },
+    {
+    path: '**',
+    redirectTo: 'not-found',
     pathMatch: 'full',
   },
 ];
