@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
-  url = 'http://localhost:3000/api/platillos'
+  url = 'https://fakestoreapi.com/products'
 
   constructor(private _http: HttpClient) { }
 

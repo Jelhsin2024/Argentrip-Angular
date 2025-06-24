@@ -8,31 +8,73 @@
     </ion-toolbar> -->
   </ion-header>
   <app-nav-store></app-nav-store>
-  <!-- <ion-content [fullscreen]="true">
+  <div class="container">
+    <div class="w-100 w-md-75 w-lg-50 mx-auto">
+      <div id="navbar-container-index"></div><!-- Aqui se carga el nav del index -->
 
-  
-    
-    
-  </ion-content> -->
-  @for (product of products; track product.id) {
-    
-    <ion-item>
-      <ion-thumbnail slot="start">
-        <img [src]="[product.image]" [alt]="[product.title]">
-      </ion-thumbnail>
-      <ion-label>
-        <h2>{{product.title}}</h2>{{product.category}}
-      </ion-label>
-      
-      <ion-button slot="end" [routerLink]="['/details', product.id]">Details</ion-button>
-    </ion-item>
-    }
-  
-  <!-- <ion-button [routerLink]="['/home']">Home</ion-button>
-   -->
-  
-  
-  <a>Aca trabaja Lauti</a>
+      <!-- Mostramos el carrusel -->
+      <!-- <div class="containerCarrusel">
+        <div class="carousel">
+          <button class="nav prev">&laquo;</button>
+          <div class="slides">
+            <img src="../../public/images/imagesPortada/1.jpg" alt="Slide 1">
+            <img src="../../public/images/imagesPortada/2.jpg" alt="Slide 2">
+            <img src="../../public/images/imagesPortada/3.jpg" alt="Slide 3">
+            <img src="../../public/images/imagesPortada/4.jpg" alt="Slide 4">
+          </div>
+          <button class="nav next">&raquo;</button>
+        </div>
+      </div> -->
+      <div class="clvideo"   id="videoPortada">
+      <!-- Contenido de la base de datos llamados por la js/codeMenu.js -->
+      </div>
+
+      <main class="py-3">
+
+        <div class="itemh3">
+          <h3 id="h3Entrada" class="lines-effectd">Paquetes</h3>
+        </div>
+
+
+        <!-- Mostramos la cuadricula -->
+        <div class="ful-img" id="fulImgBox">
+          <img src="" id="fulImg" alt="">
+          <span onclick="closeImg()"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+
+
+        <div class="cuadricula_container">
+          <div class="cuadricula" id="entradaIndex">
+
+            <!-- Contenido de la base de datos llamados por la js/platillosEntrada.js -->
+            @for (product of products; track product.id) {
+              
+              
+              <div *ngIf="product.tipo === 'Paquetes'" class="cuadricula_items">
+                  <div class="cuadricula_caja">
+                  <div class="imga">
+                      <img [src]="'assets/' + product.foto" [alt]="product.nombre" onclick="openFulImg(this.src)" class="card-img-top">
+                      
+                  </div>
+                  <p class="nombre-producto">{{ product.nombre }}</p>
+                  <p class="showPlatillo" >{{ product.descripcion }}</p>
+                  <b>${{ product.precio }}</b>
+                  <ion-button class="boton-detalle" [routerLink]="['/details', product.id]">Detalles</ion-button>
+                  </div>
+              </div>
+              
+              <!-- <ion-item >
+          
+              </ion-item> -->
+              }
+
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
   
   
   

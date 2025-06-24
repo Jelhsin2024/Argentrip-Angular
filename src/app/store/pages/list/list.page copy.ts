@@ -26,4 +26,5 @@ export class ListPage implements OnInit {
       this.products = data
     })
   }
+
 }
