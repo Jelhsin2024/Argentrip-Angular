@@ -31,8 +31,30 @@ export const routes: Routes = [
     path: 'not-found',
     loadComponent: () => import('./shared/pages/not-found/not-found.component').then((m) => m.NotFoundComponent),
   },
-
-
+  {
+    path: 'store/list',
+    loadComponent: () => import('./store/pages/list/list.page').then( m => m.ListPage)
+  },
+    {
+    path: 'store/vuelos',
+    loadComponent: () => import('./store/pages/list/list.page').then( m => m.ListPage)
+  },
+    {
+    path: 'store/alojamiento',
+    loadComponent: () => import('./store/pages/list/list.page').then( m => m.ListPage)
+  },
+    {
+    path: 'store/ofertas',
+    loadComponent: () => import('./store/pages/list/list.page').then( m => m.ListPage)
+  },
+    {
+    path: 'store/autos',
+    loadComponent: () => import('./store/pages/list/list.page').then( m => m.ListPage)
+  },
+  {
+    path: 'details/:productId',
+    loadComponent: () => import('./store/details/details/details.page').then( m => m.DetailsPage)
+  },
   {
     path: '',
     redirectTo: 'home',

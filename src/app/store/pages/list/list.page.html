@@ -1,0 +1,45 @@
+<ion-content>
+  
+  <app-nav></app-nav>
+  
+  <ion-header [translucent]="true">
+    <!-- <ion-toolbar>
+      <ion-title>Product List</ion-title>
+    </ion-toolbar> -->
+  </ion-header>
+  <app-nav-store></app-nav-store>
+  <!-- <ion-content [fullscreen]="true">
+
+  
+    
+    
+  </ion-content> -->
+  @for (product of products; track product.id) {
+    
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img [src]="[product.image]" [alt]="[product.title]">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{product.title}}</h2>{{product.category}}
+      </ion-label>
+      
+      <ion-button slot="end" [routerLink]="['/details', product.id]">Details</ion-button>
+    </ion-item>
+    }
+  
+  <!-- <ion-button [routerLink]="['/home']">Home</ion-button>
+   -->
+  
+  
+  <a>Aca trabaja Lauti</a>
+  
+  
+  
+  
+  
+  
+  <app-footer></app-footer>
+
+  
+</ion-content>
