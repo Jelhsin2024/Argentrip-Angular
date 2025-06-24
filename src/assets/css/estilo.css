@@ -450,7 +450,7 @@ h3 {
 }
 
 
-h3::before{
+/* h3::before{
 
 	content:'';
 	position: absolute;
@@ -461,7 +461,7 @@ h3::before{
 	left: 90px;
 	margin-left: 7px;
 
-}
+} */
 
 .pline{
 

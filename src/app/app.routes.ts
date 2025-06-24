@@ -37,19 +37,19 @@ export const routes: Routes = [
   },
     {
     path: 'store/vuelos',
-    loadComponent: () => import('./store/pages/list/list.page').then( m => m.ListPage)
+    loadComponent: () => import('./store/pages/vuelos/vuelos.page').then( m => m.VuelosPage)
   },
     {
     path: 'store/alojamiento',
-    loadComponent: () => import('./store/pages/list/list.page').then( m => m.ListPage)
+    loadComponent: () => import('./store/pages/alojamientos/alojamientos.page').then( m => m.AlojamientosPage)
   },
     {
     path: 'store/ofertas',
-    loadComponent: () => import('./store/pages/list/list.page').then( m => m.ListPage)
+    loadComponent: () => import('./store/pages/ofertas/ofertas.page').then( m => m.OfertasPage)
   },
     {
     path: 'store/autos',
-    loadComponent: () => import('./store/pages/list/list.page').then( m => m.ListPage)
+    loadComponent: () => import('./store/pages/autos/autos.page').then( m => m.AutosPage)
   },
   {
     path: 'details/:productId',

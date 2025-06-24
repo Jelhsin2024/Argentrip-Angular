@@ -1,12 +1,40 @@
-<div class="articulo">
-  <div>
-    <img src="assets/images/ArgentripLetrasNaranja.png" alt="">
-  </div>
+ <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>Explorá el mundo con Argentrip</h1>
+      <p>
+        Ofrecemos los mejores paquetes turísticos, vuelos y alojamientos
+        para que tu viaje sea inolvidable.
+      </p>
+      <a [routerLink]="['/store/list']" class="btn">Ver ofertas</a>
+    </div>
+  </section>
 
-  <div class="articulo-titulo">
-    <h2>Título del artículo</h2>
-  </div>
-  <div>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit dolore ullam consequatur eveniet mollitia est temporibus corrupti architecto vero placeat. Molestiae repellat porro officia. Nesciunt doloremque distinctio eveniet odio magni!</p>
-  </div>
-</div>
+  <!-- SERVICIOS -->
+  <section class="services">
+    <div class="container">
+      <h2>Nuestros Servicios</h2>
+      <div class="cards">
+        <div class="card">
+          <i class="fas fa-suitcase-rolling fa-2x"></i>
+          <h3>Paquetes</h3>
+          <p>Desde escapadas cortas a circuitos extensos.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-plane fa-2x"></i>
+          <h3>Vuelos</h3>
+          <p>Vuelos nacionales e internacionales al mejor precio.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-bed fa-2x"></i>
+          <h3>Alojamiento</h3>
+          <p>Hoteles, hostels y alojamientos boutique.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-fire fa-2x"></i>
+          <h3>Ofertas</h3>
+          <p>Descuentos exclusivos y promociones especiales.</p>
+        </div>
+      </div>
+    </div>
+  </section>

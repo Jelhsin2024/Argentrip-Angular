@@ -1,0 +1,75 @@
+<ion-content>
+  
+  <app-nav></app-nav>
+  
+  <!-- <ion-header [translucent]="true">
+
+  </ion-header> -->
+  <app-nav-store></app-nav-store>
+  <div class="container">
+    <div class="w-100 w-md-75 w-lg-50 mx-auto">
+      <div id="navbar-container-index"></div><!-- Aqui se carga el nav del index -->
+
+
+      <div class="clvideo"   id="videoPortada">
+      <!-- Contenido de la base de datos llamados por la js/codeMenu.js -->
+      </div>
+
+      <main class="py-3">
+
+        <div class="itemh3">
+          <h3 id="h3Entrada" class="lines-effectd">Autos</h3>
+        </div>
+
+
+        <!-- Mostramos la cuadricula -->
+        <div class="ful-img" id="fulImgBox">
+          <img src="" id="fulImg" alt="">
+          <span onclick="closeImg()"><i class="fa-solid fa-xmark"></i></span>
+
+
+        </div>
+        <div class="cuadricula_container">
+          <div class="cuadricula" id="entradaIndex">
+
+            <!-- Contenido de la base de datos llamados por la js/platillosEntrada.js -->
+            @for (product of products; track product.id) {
+              
+              
+              <div *ngIf="product.tipo === 'Autos'" class="cuadricula_items">
+                  <div class="cuadricula_caja">
+                  <div class="imga">
+                      <img [src]="'assets/' + product.foto" [alt]="product.nombre" onclick="openFulImg(this.src)" class="card-img-top">
+                      
+                  </div>
+                  <p class="nombre-producto">{{ product.nombre }}</p>
+                  <p class="showPlatillo" >{{ product.descripcion }}</p>
+                  <b>${{ product.precio }}</b>
+                  <ion-button class="boton-detalle" [routerLink]="['/details', product.id]">Detalles</ion-button>
+                  </div>
+              </div>
+              
+              <!-- <ion-item >
+          
+              </ion-item> -->
+              }
+
+          </div>
+        </div>
+
+
+
+      </main>
+    </div>
+  </div>
+
+  
+  
+  
+  
+  
+  
+  <app-footer></app-footer>
+
+  
+</ion-content>
