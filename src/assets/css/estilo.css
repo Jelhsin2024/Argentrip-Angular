@@ -253,8 +253,8 @@ flex-wrap: wrap;
 .imga {
 
 
-	width: 100%;
-	height: 123px;
+	/* width: 100%;
+	height: 123px; */
 
 	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.30);
     --bs-card-spacer-y: 4rem;

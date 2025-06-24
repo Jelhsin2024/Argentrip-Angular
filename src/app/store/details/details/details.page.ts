@@ -5,13 +5,15 @@ import { IonicModule } from '@ionic/angular';
 import { IProduct } from 'src/app/models/product.model';
 import { ApiService } from 'src/app/services/api.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { StoreModule } from '../../store.module';
 
 @Component({
   selector: 'app-details',
   templateUrl: './details.page.html',
   styleUrls: ['./details.page.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, IonicModule, RouterLink]
+  imports: [CommonModule, FormsModule, IonicModule, RouterLink,SharedModule, StoreModule]
 })
 export class DetailsPage implements OnInit {
   product?: IProduct
