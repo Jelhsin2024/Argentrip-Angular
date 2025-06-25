@@ -12,6 +12,9 @@ $RECYCLE.BIN/
 *.log
 log.txt
 
+# carpetas omimtidas por mi
+/android
+
 
 /.sourcemaps
 /.versions
