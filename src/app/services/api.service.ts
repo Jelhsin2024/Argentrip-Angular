@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
-  url = 'http://localhost:3000/api/platillos'
+  url = 'https://argentrip-production.up.railway.app/api/platillos'
 
   constructor(private _http: HttpClient) { }
 
