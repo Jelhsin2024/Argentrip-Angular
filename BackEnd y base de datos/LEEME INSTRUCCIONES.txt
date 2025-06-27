@@ -1,2 +1,0 @@
-1. importar la base de datos liosan_js con ese mismo nombre a phpmyadmin con XAMPP
-2. abrir consola en este documento y poner comando npm run dev y de esta manera se levanta el back
