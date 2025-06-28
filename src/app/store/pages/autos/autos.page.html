@@ -1,18 +1,55 @@
 <ion-content>
-  
+
   <app-nav></app-nav>
-  
+
   <!-- <ion-header [translucent]="true">
 
   </ion-header> -->
   <app-nav-store></app-nav-store>
+
+  <!-- Boton para obtener ubicacion -->
+  <!-- <ion-button class="boton-ubicacion" (click)="obtenerPosicionActual()">Obtener geolocalización</ion-button> -->
+
+  <button type="button" (click)="obtenerPosicionActual()" class="btn boton-ubicacion">
+    Localizar en el mapa
+  </button>
+  <!-- Si existen latitud y longitud, las muestro-->
+  @if(latitud && longitud){
+
+  <p>Latitud: {{latitud}}</p>
+  <p>Longitud: {{longitud}}</p>
+
+  }
+  <!-- Si hay un error y no hay coordenadas, mostrar mensaje de error -->
+  @else if(error){
+
+  <p class="ion-text-danger">{{error}}</p>
+
+  }
+
+  @if(googleMapsUrl){
+
+  <iframe [src]="googleMapsUrl |urlSegura" class="mapa-iframe"></iframe>
+
+  }
+
+  @else {
+
+  <p class="mensaje-espera">Aún no se ha obtenido la ubicación</p>
+
+  }
+
+
+
+
+
   <div class="container">
     <div class="w-100 w-md-75 w-lg-50 mx-auto">
       <div id="navbar-container-index"></div><!-- Aqui se carga el nav del index -->
 
 
-      <div class="clvideo"   id="videoPortada">
-      <!-- Contenido de la base de datos llamados por la js/codeMenu.js -->
+      <div class="clvideo" id="videoPortada">
+        <!-- Contenido de la base de datos llamados por la js/codeMenu.js -->
       </div>
 
       <main class="py-3">
@@ -34,25 +71,28 @@
 
             <!-- Contenido de la base de datos llamados por la js/platillosEntrada.js -->
             @for (product of products; track product.id) {
-              
-              
-              <div *ngIf="product.tipo === 'Autos'" class="cuadricula_items">
-                  <div class="cuadricula_caja">
-                  <div class="imga">
-                      <img [src]="'assets/' + product.foto" [alt]="product.nombre" onclick="openFulImg(this.src)" class="card-img-top">
-                      
-                  </div>
-                  <p class="nombre-producto">{{ product.nombre }}</p>
-                  <p class="showPlatillo" >{{ product.descripcion }}</p>
-                  <b>${{ product.precio }}</b>
-                  <ion-button class="boton-detalle" [routerLink]="['/details', product.id]">Detalles</ion-button>
-                  </div>
+
+
+            <div *ngIf="product.tipo === 'Autos'" class="cuadricula_items">
+              <div class="cuadricula_caja">
+                <div class="imga">
+                  <img [src]="'assets/' + product.foto" [alt]="product.nombre" onclick="openFulImg(this.src)"
+                    class="card-img-top">
+
+                </div>
+                <p class="nombre-producto">{{ product.nombre }}</p>
+                <p class="showPlatillo">{{ product.descripcion }}</p>
+                <b>${{ product.precio }}</b>
+                <button type="button" class="btn boton-detalle" [routerLink]="['/details', product.id]">
+                  Detalles
+                </button>
               </div>
-              
-              <!-- <ion-item >
+            </div>
+
+            <!-- <ion-item >
           
               </ion-item> -->
-              }
+            }
 
           </div>
         </div>
@@ -63,13 +103,13 @@
     </div>
   </div>
 
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
   <app-footer></app-footer>
 
-  
+
 </ion-content>

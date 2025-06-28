@@ -17,15 +17,30 @@
     // position: relative;
 }
 
-.boton-regresar{
-    // --background: #f58a31;
-    font-size: 12px;
+
+.boton-regresar {    
+    background: #f58a31;
+    color: #fff;
+    font-size: 15px;
     width: 86px;
-    min-height: 37px;
+    /* min-height: 37px; */
     position: absolute;
-    bottom: 7%;
+    bottom: 8%;
     right: 11%;
-    
+    border: none;
+    transition: background 0.2s;
+    box-shadow: 0 7px 8px rgba(0, 0, 0, 0.15);
+    /* margin: 34px; */
+    height: 38px;
+
+}
+ 
+  //estilo para la pagina details 
+.boton-regresar:hover,
+.boton-regresar:focus,
+.boton-regresar:active {
+  background: #cf6600 !important; /* Un tono más oscuro del naranja */
+  color: #fff !important;
 }
 .nombre-producto-detalle{ 
     padding: 10px;
@@ -43,14 +58,6 @@
     font-size: 18px;
     
 }
-// .contenDetalles{
-// background-color: red;
-// width: 100px;
-// margin: 0 auto;
-// position:absolute;
-// top:10%;
-// left: 10%;
-// }
 
 b{
     padding: 10px;

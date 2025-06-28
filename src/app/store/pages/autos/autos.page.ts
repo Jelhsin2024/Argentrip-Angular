@@ -8,14 +8,14 @@ import { RouterLink } from '@angular/router';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { StoreModule } from '../../store.module';
 import { Geolocation, PermissionStatus } from '@capacitor/geolocation'
-
+import { UrlSeguraPipe } from '../../../pipes/url-segura.pipe'; 
 
 @Component({
   selector: 'app-autos',
   templateUrl: './autos.page.html',
   styleUrls: ['./autos.page.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, IonicModule, RouterLink, SharedModule, StoreModule]
+  imports: [UrlSeguraPipe,CommonModule, FormsModule, IonicModule, RouterLink, SharedModule, StoreModule]
 })
 export class AutosPage implements OnInit {
 // uso de apis
@@ -29,7 +29,7 @@ export class AutosPage implements OnInit {
   }
   //fin uso apis
 
-  //Variables que vamos a utilizar
+  //Variables que vamos a utilizar 
   latitud?: number;
   longitud?: number;
   error?: string;
@@ -85,4 +85,8 @@ export class AutosPage implements OnInit {
   }
   
   
+
+  // generando servicios para generar fotos yguardarlos en el dispositivo
+  
+
 }

@@ -45,7 +45,9 @@
                   <p class="nombre-producto">{{ product.nombre }}</p>
                   <p class="showPlatillo" >{{ product.descripcion }}</p>
                   <b>${{ product.precio }}</b>
-                  <ion-button class="boton-detalle" [routerLink]="['/details', product.id]">Detalles</ion-button>
+                  <button type="button" class="btn boton-detalle"  [routerLink]="['/details', product.id]">
+                    Detalles
+                </button>
                   </div>
               </div>
               

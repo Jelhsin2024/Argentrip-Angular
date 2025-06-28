@@ -6,6 +6,7 @@ import { IonContent } from '@ionic/angular/standalone';
 import { SharedModule } from '../shared/shared.module';
 import { ArticleComponent } from './component/article/article.component';
 import { PruebaComponent } from './component/prueba/prueba.component';
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   declarations:[
@@ -16,7 +17,8 @@ import { PruebaComponent } from './component/prueba/prueba.component';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    IonContent,
+    IonicModule,
+    
     SharedModule
   ]
 })
