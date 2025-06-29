@@ -1,0 +1,172 @@
+<ion-content>
+
+  <app-nav></app-nav>
+
+
+  <br>
+  <br>
+
+  <br>
+  <br>
+  <main class="contact-section">
+    <div class="container grid-1">
+      <!-- Info de Contacto -->
+      <div class="contact-info">
+        <h2>Alquilar es facil</h2>
+        <p>Elegi el auto que queres y te lo llevamos hasta tu ubicación, solo tenes que cargar tus datos y nosotros nos
+          encargamos del resto.
+        </p>
+
+
+      </div>
+
+      <!-- Formulario -->
+      <div class="container">
+        <div class="contact-form">
+          <h2></h2>
+          <form [formGroup]="miFormulario" (ngSubmit)="enviar()">
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nombre" formControlName="nombre" [ngClass]="{
+                'is-invalid': tieneErrores('nombre', 'required') || tieneErrores('nombre', 'minlength')
+            }">
+
+              @if(tieneErrores('nombre', 'required')){
+              <div class="text-danger">Nombre requerido</div>
+              }
+
+              @if(tieneErrores('nombre', 'minlength')){
+              <div class="text-danger">Minimo 3 caracteres</div>
+              }
+              <div *ngIf="tieneErrores('nombre','required')" class="text-danger mt-1">
+                El apellido es obligatorio.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="apellido" class="form-label">Apellido</label>
+              <input type="text" class="form-control" id="apellido" formControlName="apellido" [ngClass]="{
+                'is-invalid': tieneErrores('apellido', 'required') || tieneErrores('apellido', 'minlength')
+            }">
+              @if(tieneErrores('apellido', 'required')){
+              <div class="text-danger">Apellido requerido</div>
+              }
+
+              @if(tieneErrores('apellido', 'minlength')){
+              <div class="text-danger">Minimo 3 caracteres</div>
+              }
+            </div>
+
+            <div class="mb-3">
+              <label for="edad" class="form-label">Edad</label>
+              <input type="number" class="form-control" id="edad" formControlName="edad" [ngClass]="{
+                'is-invalid': tieneErrores('edad', 'required') || tieneErrores('edad', 'min')
+            }" min="18">
+              @if(tieneErrores('edad', 'required')){
+              <div class="text-danger">Edad requerida</div>
+              }
+
+              @if(tieneErrores('edad', 'min')){
+              <div class="text-danger">Minimo 18 años</div>
+              }
+            </div>
+            <div class="mb-3">
+              <label for="celular" class="form-label">Celular</label>
+              <input type="number" class="form-control" id="celular" formControlName="celular" [ngClass]="{
+                'is-invalid': tieneErrores('celular', 'required') || tieneErrores('celular', 'min')
+            }" min="999999999">
+              @if(tieneErrores('celular', 'required')){
+              <div class="text-danger">Celular requerido</div>
+              }
+
+              @if(tieneErrores('celular', 'min')){
+              <div class="text-danger">Ingrese un número correcto</div>
+              }
+            </div>
+            <div class="mb-3">
+              <label for="tipoDni" class="form-label">Seleciconar tipo de documento</label>
+              <select class="form-select" id="tipoDni" formControlName="tipoDni">
+                <option value="" disabled selected>Seleccionar</option>
+                <option value="DNI">DNI</option>
+                <option value="Pasaporte">Pasaporte</option>
+                <option value="Cedula">Cedula</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label for="dni" class="form-label">{{usuarioActivo.tipoDni}}</label>
+              <input type="number" class="form-control" id="dni" formControlName="dni" [ngClass]="{
+                'is-invalid': tieneErrores('dni', 'required') || tieneErrores('dni', 'minlength')
+            }">
+              @if(tieneErrores('dni', 'required')){
+              <div class="text-danger">Documento requerido</div>
+              }
+
+              @if(tieneErrores('dni', 'minlength')){
+              <div class="text-danger">Minimo 7 caracteres</div>
+              }
+            </div>
+
+            <button type="button" (click)="obtenerPosicionActual()" class="btn boton-ubicacion-auto">
+              Localizar en el mapa
+            </button>
+            <!-- Si existen latitud y longitud, las muestro-->
+            @if(latitud && longitud){
+
+            <p>Latitud: {{latitud}}</p>
+            <p>Longitud: {{longitud}}</p>
+
+            }
+            <!-- Si hay un error y no hay coordenadas, mostrar mensaje de error -->
+            @else if(error){
+
+            <p class="ion-text-danger">{{error}}</p>
+
+            }
+
+            @if(googleMapsUrl){
+
+            <iframe [src]="googleMapsUrl |urlSegura" class="iframeee"></iframe>
+
+            }
+
+            @else {
+
+            <p class="mensaje-espera">Aún no se ha obtenido la ubicación</p>
+
+            }
+            <!-- Mensaje de error de ubicación -->
+            <div *ngIf="ubicacionError" class="text-danger" style="margin: 1rem 0;">
+              {{ ubicacionError }}
+            </div>
+
+            <!-- <div class="container-iframee">
+
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.9569143315393!2d-58.32800692577605!3d-34.68103687292669!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a333aaab9e647d%3A0xc060f2e60f81f461!2sPje.%20Independencia%204284%2C%20B1874%20Sarand%C3%AD%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1751216849663!5m2!1ses-419!2sar" class="iframeee" ></iframe>
+            </div> -->
+            <button type="submit" class="btn boton-cargar">Pedir auto ya!</button>
+            <button type="button" class="btn boton-volver-login" [routerLink]="['/store/autos']">
+              volver
+            </button>
+
+          </form>
+          <div *ngIf="showSuccess" class="success-message">
+            ¡Tus datos se enviaron correctamente! 🚗✅
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+  </main>
+  <br>
+  <br>
+
+  <br>
+  <br>
+
+  <app-footer></app-footer>
+
+
+</ion-content>

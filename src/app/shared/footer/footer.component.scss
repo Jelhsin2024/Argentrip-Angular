@@ -1,19 +1,19 @@
 /* 1) Que html, body e ion-app ocupen toda la altura */
-.foot {
-    width: 100%;
-    position: relative;
+// .foot {
+//     width: 100%;
+//     position: relative;
 
-    top: 35%;
-}
+//     top: 35%;
+// }
 
-/* 2) El wrapper en columna ocupa al menos toda la ventana */
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;  /* 100% de la altura de la ventana */
-}
+// /* 2) El wrapper en columna ocupa al menos toda la ventana */
+// .wrapper {
+//   display: flex;
+//   flex-direction: column;
+//   min-height: 100vh;  /* 100% de la altura de la ventana */
+// }
 
-/* 3) El contenido crece para empujar el footer */
-.content {
-  flex: 1;  /* toma todo el espacio sobrante */
-}
+// /* 3) El contenido crece para empujar el footer */
+// .content {
+//   flex: 1;  /* toma todo el espacio sobrante */
+// }

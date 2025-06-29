@@ -1,0 +1,32 @@
+<ion-content [fullscreen]="true">
+  <app-nav></app-nav>
+
+  <ion-card>
+
+
+    <div class="cuadricula_cajaa">
+      <div class="fotoDetalle">
+        <img [src]="'assets/' + product?.foto" [alt]="product?.nombre" onclick="openFulImg(this.src)" class="imgaa">
+
+      </div>
+
+
+
+        <p class="nombre-producto-detalle">{{ product?.nombre }}</p>
+        <p class="showPlatillo-detalle">{{ product?.descripcion }}</p>
+        <b>${{ product?.precio }}</b>
+        <button type="button" class=" btn boton-regresar" [routerLink]="['/store/list']">Regresar</button>
+
+
+
+
+    </div>
+
+
+  </ion-card>
+
+  <app-footer></app-footer>
+</ion-content>
+
+<!-- <ion-button [routerLink]="['/store/list']">List</ion-button> -->
+<!-- <ion-button [routerLink]="['/home']">Home</ion-button> -->

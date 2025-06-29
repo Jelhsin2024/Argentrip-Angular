@@ -2,11 +2,52 @@
   
   <app-nav></app-nav>
   
-  <h1>Contact</h1>
-  <p>
-    contact works!
-  </p>
-  
-  <app-form-contact></app-form-contact>
+ <main class="contact-section">
+    <div class="container grid-2">
+      <!-- Info de Contacto -->
+      <div class="contact-info">
+        <h2>Contáctanos</h2>
+        <p>Estamos para ayudarte. Completa el formulario o escríbenos directamente:</p>
+        <ul class="info-list">
+          <li><i class="fas fa-map-marker-alt"></i> Av. Córdoba 690, CABA</li>
+          <li><i class="fas fa-phone"></i> +54 11 3928-3241</li>
+          <li><i class="fas fa-envelope"></i>{{ 'info@argentrip.com.ar' }}</li>
+          <li><i class="fas fa-clock"></i> Lun–Vie: 9:00–18:00</li>
+        </ul>
+        <!-- Mapa embebido opcional -->
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d821.05!2d-58.379318!3d-34.598921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccbe190951961%3A0xac35df85f7821def!2sAv.%20C%C3%B3rdoba%20690%2C%20CABA!5e0!3m2!1ses-419!2sar!4v1747962105818!5m2!1ses-419!2sar"
+            width="100%"
+            height="300"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- Formulario -->
+      <div class="contact-form">
+        <h2>Envíanos un mensaje</h2>
+        <form action="/api/contactos" method="POST">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" required />
+
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="asunto">Asunto</label>
+          <input type="text" id="asunto" name="asunto" />
+
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="6" required></textarea>
+
+          <button type="submit" class="btn boton-enviar">Enviar mensaje</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
   <app-footer></app-footer>
 </ion-content>

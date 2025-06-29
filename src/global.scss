@@ -13,8 +13,10 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 @import "assets/css/normalize.css";
 @import "assets/css/estilo.css";
+// @import "assets/css/app.csss";
 @import "assets/css/whatsapp.css";
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css");
 /* Core CSS required for Ionic components to work properly */
 @import "@ionic/angular/css/core.css";
 
@@ -41,3 +43,31 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 // @import '@ionic/angular/css/palettes/dark.system.css';
+
+
+// ...todos tus imports y comentarios anteriores...
+
+/* ESTILOS PERSONALIZADOS PARA BOTONES */
+
+.boton-detalle{
+    background: #f58a31;
+    color: #fff;
+    font-size:11px;
+    width: 65px;
+    min-height: 4px;
+    position: absolute;
+    bottom:2%;
+    right:2%;
+      border: none;
+  transition: background 0.2s;
+  box-shadow: 0 7px 8px rgba(0,0,0,0.15); /* Sombra suave */
+    
+}
+.boton-detalle:hover,
+.boton-detalle:focus,
+.boton-detalle:active {
+  background: #cf6600 !important; /* Un tono más oscuro del naranja */
+  color: #fff !important;
+}
+/* Podés poner otros estilos globales acá */
+
