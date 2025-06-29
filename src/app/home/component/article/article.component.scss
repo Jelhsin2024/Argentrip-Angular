@@ -4,6 +4,28 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.boton-oferta {    
+    background: #f58a31;
+    color: #fff;
+    font-size: 15px;
+    width: 86px;
+    
+    border: none;
+    transition: background 0.2s;
+    box-shadow: 0 7px 8px rgba(0, 0, 0, 0.15);
+    /* margin: 34px; */
+    height: 38px;
+
+}
+ 
+  //estilo para la pagina details 
+.boton-oferta:hover,
+.boton-oferta:focus,
+.boton-oferta:active {
+  background: #cf6600 !important; /* Un tono más oscuro del naranja */
+  color: #fff !important;
+}
 :root {
   --brand-color: #f58a31;
   --dark-bg: #333;
@@ -80,19 +102,7 @@ body {
   max-width: 700px;
   margin-inline: auto;
 }
-.hero .btn {
-  display: inline-block;
-  background: white;
-  color: var(--brand-color);
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius);
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.2s;
-}
-.hero .btn:hover {
-  background: #fff9f0;
-}
+
 
 /* SERVICES */
 .services {

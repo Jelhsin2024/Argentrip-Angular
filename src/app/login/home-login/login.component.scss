@@ -108,6 +108,8 @@ body {
   padding: 2rem;
   border-radius: var(--radius);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+position: relative;
+
 }
 .contact-form label {
   display: block;
@@ -158,7 +160,7 @@ body {
 }
 
 .boton-enviar {    
-  background: #f58a31;
+  background: #f57231;
   color: #fff;
   font-size: 15px;
   width: 117px;
@@ -176,5 +178,29 @@ body {
 .boton-enviar:focus,
 .boton-enviar:active {
 background: #cf6600 !important; /* Un tono más oscuro del naranja */
+color: #fff !important;
+}
+
+.boton-registrarse {    
+  background: #3187f5;
+  color: #fff;
+  font-size: 15px;
+  width: 117px;
+position: absolute;
+    right: 6%;
+
+  border: none;
+  transition: background 0.2s;
+  box-shadow: 0 7px 8px rgba(0, 0, 0, 0.15);
+  margin-left: 15%; /* ajusta el espacio a tu gusto */
+  height: 38px;
+
+}
+
+//estilo para la pagina details 
+.boton-registrarse:hover,
+.boton-registrarse:focus,
+.boton-registrarse:active {
+background: #226ccb !important; /* Un tono más oscuro del naranja */
 color: #fff !important;
 }

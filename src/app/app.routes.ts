@@ -12,6 +12,14 @@ export const routes: Routes = [
     loadChildren: () => import('./store/store.module').then((m) => m.StoreModule),
   },
     {
+      path: 'register',
+    loadComponent: () => import('./login/register/register.page').then( m => m.RegisterPage)
+  },
+      {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then((m) => m.LoginModule),
+  },
+    {
     path: 'contact',
     loadChildren: () => import('./contact/contact.module').then((m) => m.ContactModule),
   },
@@ -19,10 +27,7 @@ export const routes: Routes = [
     path: 'notifications',
     loadChildren: () => import('./notifications/notifications.module').then((m) => m.NotificationsModule),
   },
-        {
-    path: 'login',
-    loadChildren: () => import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
-  },
+
           {
     path: 'pirulo',
     loadChildren: () => import('./pirulo/pirulo.module').then((m) => m.PiruloModule),
@@ -51,6 +56,7 @@ export const routes: Routes = [
     path: 'store/autos',
     loadComponent: () => import('./store/pages/autos/autos.page').then( m => m.AutosPage)
   },
+
   {
     path: 'details/:productId',
     loadComponent: () => import('./store/details/details/details.page').then( m => m.DetailsPage)
