@@ -1,35 +1,30 @@
 <ion-content [fullscreen]="true">
   <app-nav></app-nav>
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">details</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
   <ion-card>
 
-    <div class="cuadricula_containere">
-      <div class="cuadricula_containee" id="entradaIndex">
-        <div class="cuadricula_cajaa">
-          <div class="fotoDetalle">
-            <img [src]="'assets/' + product?.foto" [alt]="product?.nombre" onclick="openFulImg(this.src)"
-              class="imgaa">
 
-          </div>
-    
-            <div class="contenDetalles">
-              
-              <p class="nombre-producto-detalle">{{ product?.nombre }}</p>
-              <p class="showPlatillo-detalle">{{ product?.descripcion }}</p>
-            </div>
-            <b>${{ product?.precio }}</b>
-         
-   
-        </div>
+    <div class="cuadricula_cajaa">
+      <div class="fotoDetalle">
+        <img [src]="'assets/' + product?.foto" [alt]="product?.nombre" onclick="openFulImg(this.src)" class="imgaa">
+
       </div>
+
+
+
+        <p class="nombre-producto-detalle">{{ product?.nombre }}</p>
+        <p class="showPlatillo-detalle">{{ product?.descripcion }}</p>
+        <b>${{ product?.precio }}</b>
+        <button type="button" class=" btn boton-regresar" [routerLink]="['/store/list']">Regresar</button>
+
+
+
+
     </div>
-    <button type="button" class=" btn boton-regresar" [routerLink]="['/store/list']">Regresar</button>
+
 
   </ion-card>
+
   <app-footer></app-footer>
 </ion-content>
 

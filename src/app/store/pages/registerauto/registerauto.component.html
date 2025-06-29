@@ -19,9 +19,7 @@
 
 
       </div>
-      <div *ngIf="showSuccess" class="success-message">
-  ¡Tus datos se enviaron correctamente! 🚗✅
-</div>
+
       <!-- Formulario -->
       <div class="container">
         <div class="contact-form">
@@ -40,9 +38,9 @@
               @if(tieneErrores('nombre', 'minlength')){
               <div class="text-danger">Minimo 3 caracteres</div>
               }
-                <div *ngIf="tieneErrores('nombre','required')" class="text-danger mt-1">
-    El apellido es obligatorio.
-  </div>
+              <div *ngIf="tieneErrores('nombre','required')" class="text-danger mt-1">
+                El apellido es obligatorio.
+              </div>
             </div>
 
             <div class="mb-3">
@@ -128,7 +126,7 @@
 
             @if(googleMapsUrl){
 
-            <iframe [src]="googleMapsUrl |urlSegura" class="mapa-iframe"></iframe>
+            <iframe [src]="googleMapsUrl |urlSegura" class="iframeee"></iframe>
 
             }
 
@@ -142,14 +140,19 @@
               {{ ubicacionError }}
             </div>
 
+            <!-- <div class="container-iframee">
 
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.9569143315393!2d-58.32800692577605!3d-34.68103687292669!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a333aaab9e647d%3A0xc060f2e60f81f461!2sPje.%20Independencia%204284%2C%20B1874%20Sarand%C3%AD%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1751216849663!5m2!1ses-419!2sar" class="iframeee" ></iframe>
+            </div> -->
             <button type="submit" class="btn boton-cargar">Pedir auto ya!</button>
             <button type="button" class="btn boton-volver-login" [routerLink]="['/store/autos']">
               volver
             </button>
 
           </form>
-
+          <div *ngIf="showSuccess" class="success-message">
+            ¡Tus datos se enviaron correctamente! 🚗✅
+          </div>
         </div>
 
       </div>
