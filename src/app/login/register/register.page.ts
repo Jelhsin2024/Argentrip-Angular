@@ -4,20 +4,23 @@ import { FormsModule } from '@angular/forms';
 import { ApiService } from 'src/app/services/api.service';
 import { IProduct } from 'src/app/models/product.model';
 import { IonicModule } from '@ionic/angular'
-import { RouterLink } from '@angular/router';
+
 import { SharedModule } from 'src/app/shared/shared.module';
-import { StoreModule } from '../../store.module';
+import { RouterLink } from '@angular/router';
+import { StoreModule } from 'src/app/store/store.module';
 import { Geolocation, PermissionStatus } from '@capacitor/geolocation'
-import { UrlSeguraPipe } from '../../../pipes/url-segura.pipe'; 
+
+import { UrlSeguraPipe } from '../../pipes/url-segura.pipe';
+
 
 @Component({
-  selector: 'app-autos',
-  templateUrl: './autos.page.html',
-  styleUrls: ['./autos.page.scss'],
+  selector: 'app-register',
+  templateUrl: './register.page.html',
+  styleUrls: ['./register.page.scss'],
   standalone: true,
-  imports: [UrlSeguraPipe,CommonModule, FormsModule, IonicModule, RouterLink, SharedModule, StoreModule]
+  imports: [UrlSeguraPipe,CommonModule, FormsModule, IonicModule, SharedModule, RouterLink,SharedModule,StoreModule]
 })
-export class AutosPage implements OnInit {
+export class RegisterPage implements OnInit {
 // uso de apis
   products:IProduct[]=[]
   constructor(private _apiService: ApiService) { }
@@ -88,5 +91,4 @@ export class AutosPage implements OnInit {
 
   // generando servicios para generar fotos yguardarlos en el dispositivo
   
-
 }
