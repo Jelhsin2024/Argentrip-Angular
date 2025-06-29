@@ -208,26 +208,37 @@ background: #cf6600 !important; /* Un tono más oscuro del naranja */
 color: #fff !important;
 }
 
-.boton-ubicacion {    
-    background: #f58a31;
+.boton-ubicacion-auto {    
+    background: #1d8739;
     color: #fff;
     font-size: 16px;
-    width: 69px;
-    /* min-height: 4px; */
-    /* position: absolute; */
-    top: 15%;
-    left: 2%;
+    width: 115px;
+ 
     border: none;
     transition: background 0.2s;
     box-shadow: 0 7px 8px rgba(0, 0, 0, 0.15);
-    margin: 34px;
     height: 54px;
-    width: 10px;
+    display: block;      /* <— lo convierte en bloque */
+    margin: 1.5rem auto; /* centrar horizontalmente, y opcionalmente un margin-top/bottom */
+  /* ...el resto de tus estilos... */
+
 }
     
-.boton-ubicacion:hover,
-.boton-ubicacion:focus,
-.boton-ubicacion:active {
-  background: #cf6600 !important; /* Un tono más oscuro del naranja */
+.boton-ubicacion-auto:hover,
+.boton-ubicacion-auto:focus,
+.boton-ubicacion-auto:active {
+  background: #156129 !important; /* Un tono más oscuro del naranja */
   color: #fff !important;
+}
+
+.success-message {
+  background: #e6f9ea;
+  border: 2px solid #28a745;
+  color: #155724;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px; /* o 8px */
+  margin-bottom: 1.5rem;
 }

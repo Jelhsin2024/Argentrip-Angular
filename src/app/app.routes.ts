@@ -15,6 +15,7 @@ export const routes: Routes = [
       path: 'register',
     loadComponent: () => import('./login/register/register.page').then( m => m.RegisterPage)
   },
+  
       {
     path: 'login',
     loadChildren: () => import('./login/login.module').then((m) => m.LoginModule),
@@ -56,7 +57,10 @@ export const routes: Routes = [
     path: 'store/autos',
     loadComponent: () => import('./store/pages/autos/autos.page').then( m => m.AutosPage)
   },
-
+    {
+      path: 'registerauto',
+    loadComponent: () => import('./store/pages/registerauto/registerauto.component').then( m => m.RegisterAutoComponent)
+  },
   {
     path: 'details/:productId',
     loadComponent: () => import('./store/details/details/details.page').then( m => m.DetailsPage)

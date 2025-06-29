@@ -6,10 +6,40 @@
 
   </ion-header> -->
   <app-nav-store></app-nav-store>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Pedi tu auto hoy</h1>
+      <p>¡Encuentra las mejores ofertas y viaja con total comodidad!</p>
+       <button type="button" class="btn boton-pedi-auto" [routerLink]="['/registerauto']">Pedi el tuyo</button>
+      
+    </div>
+  </section>
+
+  <section id="modelos" class="features">
+    <div class="feature">
+      <h3>Variedad de Autos</h3>
+      <p>Elige entre compactos, sedanes, SUV y más, todos en excelente estado.</p>
+    </div>
+    <div class="feature">
+      <h3>Precios Competitivos</h3>
+      <p>Tarifas diarias, semanales y mensuales adaptadas a tu presupuesto.</p>
+    </div>
+    <div class="feature">
+      <h3>Soporte 24/7</h3>
+      <p>Asistencia en carretera y atención al cliente siempre disponible.</p>
+    </div>
+    <div class="feature">
+      <h3>Reserva Online</h3>
+      <p>Proceso rápido y seguro para reservar tu auto en minutos.</p>
+    </div>
+  </section>
+
+
 
   <!-- Boton para obtener ubicacion -->
   <!-- <ion-button class="boton-ubicacion" (click)="obtenerPosicionActual()">Obtener geolocalización</ion-button> -->
 
+                
   <button type="button" (click)="obtenerPosicionActual()" class="btn boton-ubicacion">
     Localizar en el mapa
   </button>
