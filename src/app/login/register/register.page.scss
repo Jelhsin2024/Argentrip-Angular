@@ -231,3 +231,12 @@ color: #fff !important;
   background: #cf6600 !important; /* Un tono más oscuro del naranja */
   color: #fff !important;
 }
+
+.botones-form {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+

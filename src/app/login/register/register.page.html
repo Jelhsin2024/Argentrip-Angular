@@ -29,13 +29,26 @@
 
           <label for="asunto">Contraseña</label>
           <input type="text" id="asunto" name="asunto" required />
-          
 
-          <button type="submit" class="btn boton-cargar">Cargar Registro</button>
-          <button type="button" class="btn boton-volver-login" [routerLink]="['/login']">
-            volver
-          </button>
+          <!-- Botón para tomar la foto del DNI -->
+        <label>Foto del DNI</label>
+          <ion-button expand="block" color="primary" (click)="sacarFoto()">Tomar Foto del DNI</ion-button>
 
+          <!-- Imagen previa si ya fue tomada -->
+          <div *ngIf="fotoDni">
+            <img [src]="fotoDni" alt="Foto del DNI" style="width: 100%; max-width: 300px; margin-top: 10px;" />
+          </div>
+
+          <!-- Botones de acción -->
+          <div class="botones-form">
+            <ion-button expand="block" color="success" type="submit">
+              Cargar Registro
+            </ion-button>
+
+            <ion-button expand="block" color="medium" [routerLink]="['/login']">
+              Volver
+            </ion-button>
+          </div>
         </form>
 
       </div>

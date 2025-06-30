@@ -11,6 +11,7 @@ import { StoreModule } from 'src/app/store/store.module';
 import { Geolocation, PermissionStatus } from '@capacitor/geolocation'
 
 import { UrlSeguraPipe } from '../../pipes/url-segura.pipe';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 
 
 @Component({
@@ -21,7 +22,13 @@ import { UrlSeguraPipe } from '../../pipes/url-segura.pipe';
   imports: [UrlSeguraPipe,CommonModule, FormsModule, IonicModule, SharedModule, RouterLink,SharedModule,StoreModule]
 })
 export class RegisterPage implements OnInit {
-// uso de apis
+
+  email: string = '';
+  password: string = '';
+  fotoDni: string | null = null;
+
+
+  // uso de apis
   products:IProduct[]=[]
   constructor(private _apiService: ApiService) { }
 
@@ -90,5 +97,30 @@ export class RegisterPage implements OnInit {
   
 
   // generando servicios para generar fotos yguardarlos en el dispositivo
+  
+  
+  //Método para tomar foto del DNI
+  async sacarFoto() {
+    try {
+      const image = await Camera.getPhoto({
+        quality: 90,
+        allowEditing: false,
+        resultType: CameraResultType.DataUrl,
+        source: CameraSource.Camera,
+      });
+
+       this.fotoDni = image.dataUrl!;
+    } catch (error) {
+      console.error('Error al tomar la foto:', error);
+    }
+  }
+
+  // Método simulado para enviar el formulario
+  enviarRegistro() {
+    console.log('Email:', this.email);
+    console.log('Contraseña:', this.password);
+    console.log('Foto del DNI:', this.fotoDni);
+    alert('Registro simulado enviado. Revisá consola para ver datos.');
+  }
   
 }
