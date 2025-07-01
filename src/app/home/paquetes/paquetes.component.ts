@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { IonContent } from "@ionic/angular/standalone";
 import { LocalNotifications, PermissionStatus } from '@capacitor/local-notifications';
+import { Haptics, ImpactStyle } from '@capacitor/haptics';
+
 
 @Component({
   selector: 'app-paquetes',
@@ -40,5 +42,8 @@ async sendTestNotification(): Promise<void> {
       body: 'Funciona Correctamente!'
     }]
   });
+}
+async vibrate(): Promise<void>{
+  await Haptics.impact({ style: ImpactStyle.Heavy});
 }
 }
