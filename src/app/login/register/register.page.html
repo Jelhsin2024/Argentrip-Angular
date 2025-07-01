@@ -14,14 +14,12 @@
       <div class="contact-info">
         <h2>Registrate con nosotros</h2>
         <p>Al iniciar sesión podras reservar, alquilar todo lo que necesitás para tu viaje,
-          tu merjor opción está con nostros!
+          tu mejor opción está con nosotros!
         </p>
-
-
       </div>
-      <!-- Formulario -->
-      <div class="contact-form">
-        <h2></h2>
+
+       <!-- Formulario -->
+     <div class="contact-form">
         <form action="/api/t" method="POST">
 
           <label for="email">Correo electrónico</label>
@@ -30,35 +28,29 @@
           <label for="asunto">Contraseña</label>
           <input type="text" id="asunto" name="asunto" required />
 
-          <!-- Botón para tomar la foto del DNI -->
-        <label>Foto del DNI</label>
-          <ion-button expand="block" color="primary" (click)="sacarFoto()">Tomar Foto del DNI</ion-button>
+          <label>Foto del DNI</label>
+          <ion-button expand="block" class="btn-argentrip naranja" (click)="sacarFoto()">Tomar Foto del DNI</ion-button>
 
-          <!-- Imagen previa si ya fue tomada -->
           <div *ngIf="fotoDni">
             <img [src]="fotoDni" alt="Foto del DNI" style="width: 100%; max-width: 300px; margin-top: 10px;" />
           </div>
 
-          <!-- Botones de acción -->
           <div class="botones-form">
-            <ion-button expand="block" color="success" type="submit">
+            <ion-button expand="block" class="btn-argentrip fucsia" type="submit">
               Cargar Registro
             </ion-button>
 
-            <ion-button expand="block" color="medium" [routerLink]="['/login']">
+            <ion-button expand="block" class="btn-argentrip gris" [routerLink]="['/login']">
               Volver
             </ion-button>
           </div>
-        </form>
 
+        </form>
       </div>
     </div>
   </main>
-  <br>
-  <br>
 
-  <br>
-  <br>
+  <br><br><br><br>
 
   <app-footer></app-footer>
 

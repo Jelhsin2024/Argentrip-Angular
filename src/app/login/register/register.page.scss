@@ -239,4 +239,37 @@ color: #fff !important;
   gap: 10px;
 }
 
+.btn-argentrip {
+  --border-radius: 6px;
+  --box-shadow: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 16px;
+  height: 45px;
+  letter-spacing: 0.5px;
+}
+
+.naranja {
+  --background: #f57231;
+  --color: #ffffff;
+}
+
+.fucsia {
+  --background: #e94057;
+  --color: #ffffff;
+}
+
+.gris {
+  --background: #5e5e5e;
+  --color: #ffffff;
+}
+
+.botones-form {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
 
